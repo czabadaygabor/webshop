@@ -23,7 +23,7 @@ function fillTable(data) {
         head += "<th>" + (dict[k] || "-") + "</th>";
     }
     targetTable.querySelector("thead tr").innerHTML = head;
-
+    var azonosito = 0;
     var content = "";
     for (var k in data) {
         var tr = "<tr>";
@@ -31,6 +31,7 @@ function fillTable(data) {
             if (j != "c_active" && j != "c_news") {
                 if (j == "c_id") {
                     tr += "<td><input type='text' value='" + data[k][j] + "' id='" + k + "_" + j + " szerk' disabled ></td>";
+                    azonosito = data[k][j];
                 } else {
                     tr += "<td><input type='text' value='" + data[k][j] + "' id='" + k + "_" + j + " szerk' class=input_vevo></td>";
                 }
@@ -44,7 +45,8 @@ function fillTable(data) {
                 tr += " id='" + k + " szerk' class=input_vevo></td>";
             }
         }
-        tr += "<td><input type='button' value='OK' id='" + k + " szerk' class=button_vevo></td>";
+        tr += "<td><input type='button' value='OK' id='" + azonosito + " szerk' class=button_vevo></td>";
+        console.log(azonosito);
         content += tr + "</tr>";
     }
     targetTable.querySelector("tbody").innerHTML = content;
