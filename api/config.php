@@ -16,6 +16,7 @@ $router = array(
     "/products" => "all_products.sql",
     "/products/:id" => "one_product.sql",
     "/brands" => "gyartok.sql",
+    "/invoice" => "all_invoice.sql",
 
     // Insert kérések.
     "/customers/insert" => "add_customer.sql",

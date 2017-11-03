@@ -1,15 +1,15 @@
 var tableData = [];
-var targetTable = document.querySelector("#termekek-tabla");
+var targetTable = document.querySelector("#rendelesek-tabla");
 var dict = {};
 getJson("js/dict.json", function (json) {
     dict = json;
 });
-termekek_lekerdez();
+szamlak_lekerdez();
 
 
-function termekek_lekerdez() {
-    getJson("api/products", function (products) {
-        tableData = products;
+function szamlak_lekerdez() {
+    getJson("api/invoice", function (invoice) {
+        tableData = invoice;
         fillTable(tableData);
     })
 };
@@ -30,7 +30,7 @@ function fillTable(data) {
         for (var j in data[k]) {
             tr += "<td>" + data[k][j] + "</td>";
         }
-        tr += "<td><a href='egy_termek.html?id=" + (parseInt(k) + 1) + "' class=button_termek>Szerkesztés</td>";
+        tr += "<td><a href='egy_rendeles.html?id=" + (parseInt(k) + 1) + "' class=button_rendeles>Szerkesztés</td>";
         content += tr + "</tr>";
     }
     targetTable.querySelector("tbody").innerHTML = content;
