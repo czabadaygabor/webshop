@@ -1,7 +1,7 @@
 var tableData = [];
 var targetTable = document.querySelector("#gyartok-tabla");
 var dict = {};
-getJson("js/dict.json", function (json) {
+getJson("dict.json", function (json) {
     dict = json;
 });
 gyartok_lekerdez();
@@ -28,7 +28,7 @@ function fillTable(data) {
         for (var j in data[k]) {
             tr += "<td>" + data[k][j] + "</td>";
         }
-        tr += "<td><a href='egy_vevo.html?id=" + (parseInt(k) + 1) + "' class=button_vevo>Szerkesztés</td>";
+        tr += "<td><a href='egy_gyarto.html?id=" + (parseInt(k) + 1) + "' class=button_vevo>Szerkesztés</td>";
         content += tr + "</tr>";
     }
     targetTable.querySelector("tbody").innerHTML = content;
