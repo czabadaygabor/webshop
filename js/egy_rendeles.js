@@ -4,13 +4,13 @@ var dict = {};
 getJson("js/dict.json", function (json) {
     dict = json;
 });
-var cid = location.href.split("=")[1];
+var id = location.href.split("=")[1];
 rendelesek_lekerdez();
 
 
 function rendelesek_lekerdez() {
-    console.log(cid);
-    getJson("api/invoice/" + cid, function (invoice) {
+    console.log(id);
+    getJson("api/invoice/" + id, function (invoice) {
         tableData = invoice;
         fillTable(tableData);
     })
@@ -32,15 +32,14 @@ function fillTable(data) {
         var tr = "<tr>";
         for (var j in data[k]) {
             if (j == "i_number") {
-                tr += "<td><input type='text' value='" + data[k][j] + "' id='" + k + "_" + j + " szerk' disabled ></td>";
+                tr += "<td><input type='text' value='" + data[k][j] + "' id='" + j + " szerk' disabled ></td>";
                 azonosito = data[k][j];
             } else {
-                tr += "<td><input type='text' value='" + data[k][j] + "' id='" + k + "_" + j + " szerk' class=input_rendeles></td>";
+                tr += "<td><input type='text' value='" + data[k][j] + "' id='" + j + " szerk' class='input_rendeles'></td>";
 
             }
         }
         tr += "<td><input type='button' value='OK' id='" + azonosito + " szerk' class=button_vevo></td>";
-        console.log(azonosito);
         content += tr + "</tr>";
     }
     targetTable.querySelector("tbody").innerHTML = content;
