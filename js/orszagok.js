@@ -1,15 +1,15 @@
 var tableData = [];
-var targetTable = document.querySelector("#vevok-tabla");
+var targetTable = document.querySelector("#orszagtabla");
 var dict = {};
 getJson("js/dict.json", function (json) {
     dict = json;
 });
-vevok_lekerdez();
+orszag_lekerdez();
 
 
-function vevok_lekerdez() {
-    getJson("api/orszagok", function (customers) {
-        tableData = customers;
+function orszag_lekerdez() {
+    getJson("api/orszagok", function (orszag) {
+        tableData = orszag;
         fillTable(tableData);
     })
 };

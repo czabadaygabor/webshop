@@ -11,6 +11,7 @@
     "b_name": "Gyártó",
     "b_address": "Telephely címe",
     "b_city": "Város",
+    "o_id": "Az."
     "o_distance": "Távolság",
     "o_shipping_fee": "Szállítási költség",
     "o_isavailable": "Tiltólistán?",
