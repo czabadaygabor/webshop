@@ -18,5 +18,11 @@
     "p_name": "Terméknév",
     "p_price": "Termék ára",
     "p_sale": "Akciós",
-    "p_description": "Termék leírása"
+    "p_description": "Termék leírása",
+    "i_number": "Számla száma",
+    "i_date": "Dátum",
+    "i_total": "Összeg",
+    "i_complaint": "Panasz?",
+    "i_coupon_code": "Kuponkód",
+    "i_coupon_perc": "Kupon összeg"
 }
