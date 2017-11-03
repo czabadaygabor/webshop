@@ -1,10 +1,10 @@
 {
-    "customer_id": "Az.",
-    "customer_name": "Név",
-    "address": "Cím",
-    "postcode": "Irsz.",
-    "product_id": "Az.",
-    "product_name": "Név",
-    "product_category_id": "Kat.",
-    "product_price": "Ár"
+    "c_id": "Az.",
+    "c_name": "Név",
+    "c_address": "Cím",
+    "c_city": "Város.",
+    "o_name": "Ország",
+    "c_contact": "E-mail",
+    "c_active": "Aktív?",
+    "c_news": "Hívlevél?"
 }

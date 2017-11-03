@@ -4,11 +4,13 @@ var dict = {};
 getJson("js/dict.json", function (json) {
     dict = json;
 });
+var cid = location.href.split("=")[1];
 vevok_lekerdez();
 
 
 function vevok_lekerdez() {
-    getJson("api/customers", function (customers) {
+    console.log(cid);
+    getJson("api/customers/" + cid, function (customers) {
         tableData = customers;
         fillTable(tableData);
     })
@@ -26,9 +28,23 @@ function fillTable(data) {
     for (var k in data) {
         var tr = "<tr>";
         for (var j in data[k]) {
-            tr += "<td>" + data[k][j] + "</td>";
+            if (j != "c_active" && j != "c_news") {
+                if (j == "c_id") {
+                    tr += "<td><input type='text' value='" + data[k][j] + "' id='" + k + "_" + j + " szerk' disabled ></td>";
+                } else {
+                    tr += "<td><input type='text' value='" + data[k][j] + "' id='" + k + "_" + j + " szerk' class=input_vevo></td>";
+                }
+
+                console.log(k + "_" + j);
+            } else {
+                tr += "<td><input type='checkbox'";
+                if (data[k][j] == 1) {
+                    tr += " checked ";
+                }
+                tr += " id='" + k + " szerk' class=input_vevo></td>";
+            }
         }
-        tr += "<td><a href='egy_vevo.html?id=" + (parseInt(k) + 1) + "' class=button_vevo>Szerkesztés</td>";
+        tr += "<td><input type='button' value='OK' id='" + k + " szerk' class=button_vevo></td>";
         content += tr + "</tr>";
     }
     targetTable.querySelector("tbody").innerHTML = content;

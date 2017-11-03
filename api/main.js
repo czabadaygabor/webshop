@@ -3,14 +3,14 @@
  * @param {function} callback, a függvény ami megkapja az adatokat
  */
 function getJson(url, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.open("get", url);
+    var xhr = new XMLHttpRequest();
+    xhr.open("get", url);
 
-  xhr.onload = function(ev) {
-    var serverData = JSON.parse(ev.target.response);
-    callback(serverData);
-  };
-  xhr.send();
+    xhr.onload = function (ev) {
+        var serverData = JSON.parse(ev.target.response);
+        callback(serverData);
+    };
+    xhr.send();
 }
 
 /** Adatok küldése az API -nak.
@@ -21,10 +21,10 @@ function getJson(url, callback) {
 function postData(url, data, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open("post", url);
-  
-    xhr.onload = function(ev) {
-      var serverData = JSON.parse(ev.target.response);
-      callback(serverData);
+
+    xhr.onload = function (ev) {
+        var serverData = JSON.parse(ev.target.response);
+        callback(serverData);
     };
 
     if (typeof data !== "string") {
