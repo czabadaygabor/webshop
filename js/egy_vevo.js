@@ -91,7 +91,7 @@ document.getElementById("updater_gomb").addEventListener("click", function () {
     var c_id = document.getElementById("c_id").value;
     var c_name = document.getElementById("c_name").value;
     var c_address = document.getElementById("c_address").value;
-    var c_city = document.getElementById("c_city").lue;
+    var c_city = document.getElementById("c_city").value;
     var o_name = document.getElementById("o_name").value;
     var c_contact = document.getElementById("c_contact").value;
     if (document.getElementById("c_active").checked == true) {
@@ -106,16 +106,26 @@ document.getElementById("updater_gomb").addEventListener("click", function () {
     }
 
     var customer = {
-        cid: c_id,
+        id: c_id,
         cname: c_name,
         address: c_address,
         city: c_city,
         orszagnev: o_name,
         contact: c_contact,
-        active: c_actve,
+        active: c_active,
         news: c_news
     };
-    postData('api/customers/update/' + customer[c_id], customer, function (response) {
+    console.log(customer.id);
+    console.log(customer.cname);
+    console.log(customer.address);
+    console.log(customer.city);
+    console.log(customer.orszagnev);
+    console.log(customer.contact);
+    console.log(customer.active);
+    console.log(customer.news);
+    var hivas = 'api/customers/update/' + customer.id;
+    console.log(hivas);
+    postData(hivas, customer, function (response) {
         console.log(response);
     });
 
