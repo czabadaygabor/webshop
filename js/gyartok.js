@@ -1,7 +1,7 @@
 var tableData = [];
 var targetTable = document.querySelector("#gyartok-tabla");
 var dict = {};
-getJson("dict.json", function (json) {
+getJson("js/dict.json", function (json) {
     dict = json;
 });
 gyartok_lekerdez();

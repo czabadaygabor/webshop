@@ -16,7 +16,11 @@ $router = array(
     "/products" => "all_products.sql",
     "/products/:id" => "one_product.sql",
     "/brands" => "gyartok.sql",
+<<<<<<< HEAD
     "/invoice" => "all_invoice.sql",
+=======
+    "/brands/:id" => "egy_gyarto.sql",
+>>>>>>> 7742447e557859930fdff71afb66c9d58f00a877
 
     // Insert kérések.
     "/customers/insert" => "add_customer.sql",
