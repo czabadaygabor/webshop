@@ -1,7 +1,7 @@
 var tableData = [];
 var targetTable = document.querySelector("#termekek-tabla");
 var dict = {};
-getJson("js/dict2.json", function (json) {
+getJson("js/dict.json", function (json) {
     dict = json;
 });
 var cid = location.href.split("=")[1];
@@ -24,27 +24,23 @@ function fillTable(data) {
     }
     targetTable.querySelector("thead tr").innerHTML = head;
 
+    //tbody generálása
+
+    var azonosito = 0;
     var content = "";
     for (var k in data) {
         var tr = "<tr>";
-        /* for (var j in data[k]) {
-            if (j != "c_active" && j != "c_news") {
-                if (j == "c_id") {
-                    tr += "<td><input type='text' value='" + data[k][j] + "' id='" + k + "_" + j + " szerk' disabled ></td>";
-                } else {
-                    tr += "<td><input type='text' value='" + data[k][j] + "' id='" + k + "_" + j + " szerk' class=input_vevo></td>";
-                }
-
-                console.log(k + "_" + j);
+        for (var j in data[k]) {
+            if (j == "p_id") {
+                tr += "<td><input type='text' value='" + data[k][j] + "' id='" + k + "_" + j + " szerk' disabled ></td>";
+                azonosito = data[k][j];
             } else {
-                tr += "<td><input type='checkbox'";
-                if (data[k][j] == 1) {
-                    tr += " checked ";
-                }
-                tr += " id='" + k + " szerk' class=input_vevo></td>";
+                tr += "<td><input type='text' value='" + data[k][j] + "' id='" + k + "_" + j + " szerk' class=input_vevo></td>";
+
             }
-        } */
-        tr += "<td><input type='button' value='OK' id='" + k + " szerk' class=button_termek></td>";
+        }
+        tr += "<td><input type='button' value='OK' id='" + azonosito + " szerk' class=button_vevo></td>";
+        console.log(azonosito);
         content += tr + "</tr>";
     }
     targetTable.querySelector("tbody").innerHTML = content;

@@ -1,5 +1,5 @@
-SELECT c.c_id, c.c_name,c.c_address,c.c_city,o.o_name,c.c_contact,c.c_active,c.c_news
-FROM customers c, orszag o
+SELECT p_id, p_name, b_name, p_price, p_sale, p_description
+FROM products p, brands b
 WHERE
-c.o_id=o.o_id
-and c_id = :id;
+p.b_id=b.b_id
+and p_id = :id;
