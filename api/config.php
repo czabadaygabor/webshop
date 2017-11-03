@@ -21,6 +21,15 @@ $router = array(
     "/orszagok" => "orszagok.sql",
     "/orszagok/:id" => "egy_orszag.sql",
     "/invoice/:id" => "one_invoice.sql",
+    "/felhasznalok" => "osszes_felh.sql", 
+    "/active" => "active_felh.sql", 
+    "/inactive" => "inactive_felh.sql", 
+    "/osszhirlevel" => "hirlevel.sql", 
+    "/akt_ho" => "akt_ho.sql", 
+    "/elozo_ho" => "elozo_ho.sql", 
+    "/elerheto_orszagok" => "elerhetoorszagok.sql", 
+    "/osszgyarto" => "osszgyarto.sql", 
+    "/ossztermek" => "ossztermek.sql", 
 
     // Insert kérések.
     "/customers/insert" => "add_customer.sql",

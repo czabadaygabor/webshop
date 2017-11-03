@@ -1,0 +1,1 @@
+SELECT count(p_id) as db FROM products;

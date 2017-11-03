@@ -1,0 +1,1 @@
+SELECT count(o_id) as db FROM orszag WHERE o_isavailable=1;

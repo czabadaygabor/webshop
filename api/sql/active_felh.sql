@@ -1,0 +1,1 @@
+SELECT count(c_id) as db FROM customers WHERE c_active=1;

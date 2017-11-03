@@ -1,0 +1,1 @@
+SELECT count(b_id) as db FROM brands;
