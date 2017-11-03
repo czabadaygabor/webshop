@@ -1,7 +1,7 @@
 var tableData = [];
 var targetTable = document.querySelector("#termekek-tabla");
 var dict = {};
-getJson("js/dict2.json", function (json) {
+getJson("js/dict.json", function (json) {
     dict = json;
 });
 var cid = location.href.split("=")[1];
@@ -27,7 +27,7 @@ function fillTable(data) {
     var content = "";
     for (var k in data) {
         var tr = "<tr>";
-        /* for (var j in data[k]) {
+        for (var j in data[k]) {
             if (j != "c_active" && j != "c_news") {
                 if (j == "c_id") {
                     tr += "<td><input type='text' value='" + data[k][j] + "' id='" + k + "_" + j + " szerk' disabled ></td>";
@@ -43,7 +43,7 @@ function fillTable(data) {
                 }
                 tr += " id='" + k + " szerk' class=input_vevo></td>";
             }
-        } */
+        }
         tr += "<td><input type='button' value='OK' id='" + k + " szerk' class=button_termek></td>";
         content += tr + "</tr>";
     }

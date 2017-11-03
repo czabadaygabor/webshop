@@ -1,7 +1,7 @@
 var tableData = [];
 var targetTable = document.querySelector("#termekek-tabla");
 var dict = {};
-getJson("js/dict2.json", function (json) {
+getJson("js/dict.json", function (json) {
     dict = json;
 });
 termekek_lekerdez();

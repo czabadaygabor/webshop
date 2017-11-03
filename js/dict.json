@@ -13,5 +13,10 @@
     "b_city": "Város",
     "o_distance": "Távolság",
     "o_shipping_fee": "Szállítási költség",
-    "o_isavailable": "Tiltólistán?"
+    "o_isavailable": "Tiltólistán?",
+    "p_id": "Az.",
+    "p_name": "Terméknév",
+    "p_price": "Termék ára",
+    "p_sale": "Akciós",
+    "p_description": "Termék leírása"
 }
