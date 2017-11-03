@@ -20,7 +20,7 @@ $router = array(
     "/brands/:id" => "egy_gyarto.sql",
     "/orszagok" => "orszagok.sql",
     "/orszagok/:id" => "egy_orszag.sql",
-    "/invoice/:id" => "all_invoice.sql",
+    "/invoice/:id" => "one_invoice.sql",
 
     // Insert kérések.
     "/customers/insert" => "add_customer.sql",
