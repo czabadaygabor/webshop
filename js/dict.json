@@ -6,11 +6,12 @@
     "o_name": "Ország",
     "c_contact": "E-mail",
     "c_active": "Aktív?",
-    "c_news": "Hívlevél?",
-    "p_id": "Az.",
-    "p_name": "Terméknév",
-    "p_price": "Termék ára",
-    "p_sale": "Akciós",
-    "b_id": "Gyártó",
-    "p_description": "Termék leírása"
+    "c_news": "Hírlevél?",
+    "b_id": "Gy.Az.",
+    "b_name": "Gyártó",
+    "b_address": "Telephely címe",
+    "b_city": "Város",    
+    "o_distance": "Távolság",
+    "o_shipping_fee": "Szállítási költség",
+    "o_isavailable": ""
 }
