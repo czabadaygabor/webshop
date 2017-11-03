@@ -1,9 +1,9 @@
 <?php
 
 // Adatbázis kapcsolat beállításai.
-define("DBNAME", "bestyellow");
-define("DBUSER", "bestyellow");
-define("DBPASSWORD", "BVxfn7gaLppkcSty");
+define("DBNAME", "pharma");
+define("DBUSER", "pharma");
+define("DBPASSWORD", "Pharma1");
 
 // Routing (útválasztó) beállításai.
 define("PREFIX", "api");

@@ -1,0 +1,16 @@
+{
+    "c_id": "Az.",
+    "c_name": "Név",
+    "c_address": "Cím",
+    "c_city": "Város.",
+    "o_name": "Ország",
+    "c_contact": "E-mail",
+    "c_active": "Aktív?",
+    "c_news": "Hívlevél?",
+    "p_id": "Az.",
+    "p_name": "Terméknév",
+    "p_price": "Termék ára",
+    "p_sale": "Akciós",
+    "b_id": "Gyártó",
+    "p_description": "Termék leírása"
+}
