@@ -1,16 +1,16 @@
 var tableData = [];
-var targetTable = document.querySelector("#gyartok-tabla");
+var targetTable = document.querySelector("#egy-gyarto-tabla");
 var dict = {};
-getJson("js/dict2.json", function (json) {
+getJson("js/dict.json", function (json) {
     dict = json;
 });
-var cid = location.href.split("=")[1];
-termekek_lekerdez();
+var id = location.href.split("=")[1];
+gyartok_lekerdez();
 
 
-function termekek_lekerdez() {
-    console.log(cid);
-    getJson("api/brands/" + cid, function (brands) {
+function gyartok_lekerdez() {
+    console.log(id);
+    getJson("api/brands/" + id, function (brands) {
         tableData = brands;
         fillTable(tableData);
     })
@@ -24,28 +24,17 @@ function fillTable(data) {
     }
     targetTable.querySelector("thead tr").innerHTML = head;
 
+    //tbody generálása
     var content = "";
     for (var k in data) {
         var tr = "<tr>";
         for (var j in data[k]) {
 
-            console.log(k + "_" + j);
+            tr += "<td><input type='text' value='" + data[k][j] + "' id='" + k + "_" + j + " szerk' class='input_gyarto'></td>";
+
         }
-        tr += " id='" + k + " szerk' class=input_gyarto></td>";
     }
-    tr += "<td><input type='button' value='OK' id='" + k + " szerk' class=button_gyarto></td>";
     content += tr + "</tr>";
+
     targetTable.querySelector("tbody").innerHTML = content;
 }
-
-
-
-
-
-/*document.querySelector(".products-btn")
-    .addEventListener("click", function () {
-        getJson("../api/products", function (products) {
-            tableData = products;
-            fillTable(tableData);
-        });
-    });*/
