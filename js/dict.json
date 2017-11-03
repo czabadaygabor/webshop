@@ -10,8 +10,8 @@
     "b_id": "Gy.Az.",
     "b_name": "Gyártó",
     "b_address": "Telephely címe",
-    "b_city": "Város",    
+    "b_city": "Város",
     "o_distance": "Távolság",
     "o_shipping_fee": "Szállítási költség",
-    "o_isavailable": ""
+    "o_isavailable": "Tiltólistán?"
 }
