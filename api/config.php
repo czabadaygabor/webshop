@@ -14,6 +14,8 @@ $router = array(
     "/customers/:id" => "one_customer.sql",
     "/customers/limit/:s" => "limit_customer.sql",
     "/products" => "all_products.sql",
+    "/brands" => "gyartok.sql",
+
     // Insert kérések.
     "/customers/insert" => "add_customer.sql",
     // Update kérések.
