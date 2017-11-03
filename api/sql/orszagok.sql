@@ -1,1 +1,1 @@
-SELECT * FROM orszagok;
+SELECT * FROM orszag;

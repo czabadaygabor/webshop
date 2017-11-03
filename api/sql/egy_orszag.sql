@@ -1,3 +1,3 @@
 SELECT *
-FROM orszagok
+FROM orszag
 WHERE o_id=:id;
