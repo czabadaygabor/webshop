@@ -34,8 +34,6 @@ function fillTable(data) {
                 } else {
                     tr += "<td><input type='text' value='" + data[k][j] + "' id='" + j + "' class='input_vevo'></td>";
                 }
-
-                console.log(j);
             } else {
                 tr += "<td><input type='checkbox'";
                 if (data[k][j] == 1) {
@@ -85,9 +83,8 @@ function fillTable(data) {
 
 
 }*/
-//document.getElementById("updater_gomb").addEventListener("click", anyádat);
 
-document.getElementById("updater_gomb").addEventListener("click", function () {
+document.getElementById("insgomb").addEventListener("click", function () {
     var c_id = document.getElementById("c_id").value;
     var c_name = document.getElementById("c_name").value;
     var c_address = document.getElementById("c_address").value;
@@ -123,7 +120,68 @@ document.getElementById("updater_gomb").addEventListener("click", function () {
     console.log(customer.contact);
     console.log(customer.active);
     console.log(customer.news);
-    var hivas = 'api/customers/update/' + customer.id;
+    var hivas = "api/customers/insert";
+    console.log(hivas);
+    postData(hivas, customer, function (response) {
+        console.log(response);
+    });
+
+
+});
+
+
+document.getElementById("updgomb").addEventListener("click", function () {
+    var c_id = document.getElementById("c_id").value;
+    var c_name = document.getElementById("c_name").value;
+    var c_address = document.getElementById("c_address").value;
+    var c_city = document.getElementById("c_city").value;
+    var o_name = document.getElementById("o_name").value;
+    var c_contact = document.getElementById("c_contact").value;
+    if (document.getElementById("c_active").checked == true) {
+        var c_active = 1;
+    } else {
+        var c_active = 0;
+    }
+    if (document.getElementById("c_news").checked == true) {
+        var c_news = 1;
+    } else {
+        var c_news = 0;
+    }
+
+    var customer = {
+        id: c_id,
+        cname: c_name,
+        address: c_address,
+        city: c_city,
+        orszagnev: o_name,
+        contact: c_contact,
+        active: c_active,
+        news: c_news
+    };
+    console.log(customer.id);
+    console.log(customer.cname);
+    console.log(customer.address);
+    console.log(customer.city);
+    console.log(customer.orszagnev);
+    console.log(customer.contact);
+    console.log(customer.active);
+    console.log(customer.news);
+    var hivas = "api/customers/update/" + c_id;
+    console.log(hivas);
+    postData(hivas, customer, function (response) {
+        console.log(response);
+    });
+
+
+});
+
+document.getElementById("delgomb").addEventListener("click", function () {
+    var c_id = document.getElementById("c_id").value;
+    var customer = {
+        id: c_id
+    };
+    console.log(customer.id);
+    var hivas = "api/customers/delete/" + customer.id;
     console.log(hivas);
     postData(hivas, customer, function (response) {
         console.log(response);

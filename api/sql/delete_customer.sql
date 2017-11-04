@@ -1,2 +1,2 @@
 DELETE FROM customers 
-    WHERE customer_id = :id;
+    WHERE c_id = :id;
