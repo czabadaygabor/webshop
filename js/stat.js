@@ -16,8 +16,8 @@ function felh_lekerdez() {
         targetTable.querySelector("tbody").innerHTML += "<tr><td>Összes felhasználók száma:</td><td>" + felh + "</td></tr>";
         //targetTable.querySelector("tbody").innerHTML = content;
         //content = "";
-    });
 
+    });
 
     getJson("api/active", function (felhasznalok2) {
         active = felhasznalok2[0].db;

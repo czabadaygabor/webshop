@@ -15,7 +15,7 @@ function getPath($router, $path) {
     } else {
         $keys = array_keys($router);
         foreach($keys as $key) {
-            $alt_key = preg_replace('/\:[^\/]*/', '[^/]*', $key);
+            $alt_key = preg_replace('/\:[a-z^\/]*/', '[a-z0-9A-Z^/]*', $key);
             $alt_key = str_replace('/', '\\/', $alt_key);
             preg_match('/^'.$alt_key.'$/', $path, $matches);
             if (count($matches) > 0) {
@@ -71,7 +71,6 @@ $url = $_SERVER['REQUEST_URI'];
 // Parse url.
 $path = explode(PREFIX, $url);
 $path = $path[1];
-
 // Get sql file.
 $sql_path = SQLDIR . DIRECTORY_SEPARATOR;
 $router_result = getPath($router, $path);
@@ -90,7 +89,6 @@ if ($sql_statement === false) {
     send_error("SQL file hiba", "A fájl nem létezik: ".$sql_path);
 }
 $sql_statement = insertVars($router_result, $path, $sql_statement);
-
 // Run statement.
 $statement = $dbh->prepare($sql_statement);
 $statement->execute();
