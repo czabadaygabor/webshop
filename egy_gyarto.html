@@ -6,27 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gyártó adatai adatbázis nyilvántartás</title>
+    <link rel="stylesheet" href="api/css/bootstrap.css">
+    <link rel="stylesheet" href="api/css/additionalstyling.css">
 </head>
 
-<body>
-    <form action="">
-        <div class="row">
-            <table id="egy-gyarto-tabla" class="table table-hover">
-                <thead>
-                    <tr>
-                    </tr>
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <!-- ide kell egy link-->
+        <a class="navbar-brand" href="index.html">Pharma Kft.</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                    <!--ide kell egy link-->
+                    <a class="nav-link" href="index.html">
+                        <i class="fa fa-fw fa-dashboard"></i>
+                        <span class="nav-link-text">Statisztikák</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
 
-                </thead>
-                <tbody></tbody>
-            </table>
+                    <a class="nav-link" href="vevok.html">
+                        <i class="fa fa-fw fa-area-chart"></i>
+                        <span class="nav-link-text">Vásárlók</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+
+                    <a class="nav-link" href="termekek.html">
+                        <i class="fa fa-fw fa-table"></i>
+                        <span class="nav-link-text">Termékek</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+
+                    <a class="nav-link" href="gyartok.html">
+                        <i class="fa fa-fw fa-table"></i>
+                        <span class="nav-link-text">Gyártók</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+
+                    <a class="nav-link" href="rendelesek.html">
+                        <i class="fa fa-fw fa-table"></i>
+                        <span class="nav-link-text">Rendelések</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+
+                    <a class="nav-link" href="orszag.html">
+                        <i class="fa fa-fw fa-table"></i>
+                        <span class="nav-link-text">Országok</span>
+                    </a>
+                </li>
+            </ul>
+            <!--<ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0 mr-lg-2">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                </li>
+            </ul>-->
         </div>
-    </form>
+    </nav>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+
+            <!-- Example DataTables Card-->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-table"></i>Gyártók Adatbázis</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <form action="">
+                            <table class="table table-bordered" id="egy-gyarto-tabla" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                    </div>
 
 
+                    </form>
+                </div>
+            </div>
 
-    <script src="api/main.js"></script>
-    <script src="js/egy_gyarto.js"></script>
+
+            <script src="api/main.js"></script>
+            <script src="js/egy_gyarto.js"></script>
 
 </body>
+<!-- /.content-wrapper-->
+<footer class="sticky-footer">
+    <div class="container">
+        <div class="text-center">
+            <small>Copyright © Pharma Kft. 2017</small>
+        </div>
+    </div>
+</footer>
 
 </html>
