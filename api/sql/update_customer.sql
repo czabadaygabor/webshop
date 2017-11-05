@@ -15,4 +15,4 @@ UPDATE customers
      c_contact = 'contact',
        c_active = 1,
       c_news = 0
- WHERE c_id = 16;
+ WHERE c_id = 3;
