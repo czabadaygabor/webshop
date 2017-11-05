@@ -8,6 +8,7 @@ var akt_ho;
 var ossztermek;
 var osszgyarto;
 var elerhetoorszagok;
+var sorrendben = [];
 
 
 function felh_lekerdez() {
