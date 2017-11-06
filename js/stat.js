@@ -17,7 +17,7 @@ function felh_lekerdez() {
         targetTable.querySelector("tbody").innerHTML += "<tr><td>Összes felhasználók száma:</td><td>" + felh + "</td></tr>";
         //targetTable.querySelector("tbody").innerHTML = content;
         //content = "";
-        sorrendben[0] = "<tr><td>Összes felhasználók száma:</td><td>" + felh + "</td></tr>";
+        sorrendben[0] = felh;
     });
 
     getJson("api/active", function (felhasznalok2) {
@@ -81,15 +81,10 @@ function felh_lekerdez() {
 };
 
 function sorrend() {
-    var content = "";
-    console.log(sorrendben);
+    console.log(sorrendben[0]);
+    //targetTable.querySelector("tbody").innerHTML += "<tr><td>Összes felhasználók száma:</td><td>" + sorrendben[0] + "</td></tr>";
+    //targetTable.querySelector("tbody").innerHTML += "<tr><td>Aktív felhasználók száma:</td><td>" + active + "</td></tr>";
 
-    for (var fa = 0; fa < 9; fa++) {
-        content += sorrendben[fa];
-        //console.log(sorrendben[fa]);
-    }
-    //targetTable.querySelector("tbody").innerHTML = content;
 }
 
 felh_lekerdez();
-sorrend();

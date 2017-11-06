@@ -32,6 +32,7 @@ function fillTable(data) {
                     tr += "<td><input type='text' value='" + data[k][j] + "' id='" + j + "' disabled ></td>";
                     azonosito = data[k][j];
                 } else {
+                    console.log(j);
                     tr += "<td><input type='text' value='" + data[k][j] + "' id='" + j + "' class='input_vevo'></td>";
                 }
             } else {
