@@ -33,8 +33,20 @@ $router = array(
 
     // Insert kérések.
     "/customers/insert" => "add_customer.sql",
+    "/customers/binsert" => "add_brand.sql",
+    "/customers/pinsert" => "add_product.sql",
+    "/customers/oinsert" => "add_orszag.sql",
+
     // Update kérések.
     "/customers/update/:id" => "update_customer.sql",
+    "/customers/pupdate/:id" => "update_product.sql",
+    "/customers/bupdate/:id" => "update_brand.sql",
+    "/customers/oupdate/:id" => "update_orszag.sql",
+
     // Delete kérések.
-    "/customers/delete/:id" => "delete_customer.sql"
+    "/customers/delete/:id" => "delete_customer.sql",
+    "/customers/bdelete/:id" => "delete_brand.sql",
+    "/customers/pdelete/:id" => "delete_product.sql",
+    "/customers/odelete/:id" => "delete_orszag.sql"
+
 );

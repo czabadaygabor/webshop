@@ -32,15 +32,13 @@ function fillTable(data) {
         var tr = "<tr>";
         for (var j in data[k]) {
             if (j == "p_id") {
-                tr += "<td><input type='text' value='" + data[k][j] + "' id='" + k + "_" + j + " szerk' disabled ></td>";
+                tr += "<td><input type='text' value='" + data[k][j] + "' id='" + j + "' disabled ></td>";
                 azonosito = data[k][j];
             } else {
-                tr += "<td><input type='text' value='" + data[k][j] + "' id='" + k + "_" + j + " szerk' class=input_vevo></td>";
+                tr += "<td><input type='text' value='" + data[k][j] + "' id='" + j + "' class=input_vevo></td>";
 
             }
         }
-        tr += "<td><input type='button' value='OK' id='" + azonosito + " szerk' class=button_vevo></td>";
-        console.log(azonosito);
         content += tr + "</tr>";
     }
     targetTable.querySelector("tbody").innerHTML = content;
@@ -53,3 +51,73 @@ function fillTable(data) {
             fillTable(tableData);
         });
     });*/
+
+
+document.getElementById("updgomb").addEventListener("click", function () {
+    var p_id = document.getElementById("p_id").value;
+    var p_name = document.getElementById("p_name").value;
+    var b_name = document.getElementById("b_name").value;
+    var p_price = document.getElementById("p_price").value;
+    var p_sale = document.getElementById("p_sale").value;
+    var p_desc = document.getElementById("p_description").value;
+
+    var customer = {
+        id: p_id,
+        pname: p_name,
+        gyartonev: b_name,
+        pprice: p_price,
+        psale: p_sale,
+        pdesc: p_desc
+    };
+    console.log(customer.pname);
+    console.log(customer.gyartonev);
+    console.log(customer.pprice);
+    console.log(customer.psale);
+    console.log(customer.pdesc);
+    var hivas = "api/customers/pupdate/" + customer.id;
+    console.log(hivas);
+    postData(hivas, customer, function (response) {
+        console.log(response);
+    });
+
+
+});
+
+document.getElementById("delgomb").addEventListener("click", function () {
+    var p_id = document.getElementById("p_id").value;
+    var customer = {
+        id: p_id
+    };
+    var hivas = "api/customers/pdelete/" + customer.id;
+    console.log(hivas);
+    postData(hivas, customer, function (response) {
+        console.log(response);
+    });
+
+
+});
+document.getElementById("insgomb").addEventListener("click", function () {
+    var p_id = document.getElementById("p_id").value;
+    var p_name = document.getElementById("p_name").value;
+    var b_name = document.getElementById("b_name").value;
+    var p_price = document.getElementById("p_price").value;
+    var p_sale = document.getElementById("p_sale").value;
+    var p_desc = document.getElementById("p_description").value;
+
+    var customer = {
+        id: p_id,
+        pname: p_name,
+        gyartonev: b_name,
+        pprice: p_price,
+        psale: p_sale,
+        pdesc: p_desc
+    };
+
+    var hivas = "api/customers/pinsert";
+    console.log(hivas);
+    postData(hivas, customer, function (response) {
+        console.log(response);
+    });
+
+
+});
