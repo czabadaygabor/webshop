@@ -28,7 +28,7 @@ function fillTable(data) {
         for (var j in data[k]) {
             tr += "<td>" + data[k][j] + "</td>";
         }
-        tr += "<td><a href='egy_gyarto.html?id=" + (parseInt(data[k].i_number)) + "' class=button_vevo>Szerkesztés</td>";
+        tr += "<td><a href='egy_gyarto.html?id=" + (parseInt(data[k].b_id)) + "' class=button_vevo>Szerkesztés</td>";
         content += tr + "</tr>";
     }
     targetTable.querySelector("tbody").innerHTML = content;

@@ -1,7 +1,7 @@
-INSERT INTO products 
-(b_name,b_address,b_city,o_id)
+INSERT INTO brands
+(b_name,b_address,o_id,b_city)
    VALUES
-     (':bname',':baddress',':bcity', (SELECT o_id FROM orszag WHERE o_name=':orszagnev'));
+     (':bname',':address', (SELECT o_id FROM orszag WHERE o_name=':orszagnev'),':city');
 
 
 
